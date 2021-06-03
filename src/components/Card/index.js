@@ -4,11 +4,11 @@ import asusgeforcertx from '../../assets/images/asusgeforcertx3090.png'
 
 function Card() {
     return (
-        <div className="card">
+        <div >
             <img src={asusgeforcertx} alt="imagenprod" />
-            <div className="card-body">
-                <h1 className="card-title">Placa Video Geforce Asus Rtx 3090 24gb </h1>
-                <p className="card-text text-secondary">- Marca : ASUS
+            <div >
+                <h1 >Placa Video Geforce Asus Rtx 3090 24gb </h1>
+                <p >- Marca : ASUS
                 - Modelo : ROG Strix GeForce RTX 3090
                 - P/N : ROG-STRIX-RTX3090-O24G-GAMING
                 - UPC : 192876928622
