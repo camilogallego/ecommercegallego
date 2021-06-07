@@ -1,8 +1,14 @@
-img{
+.card{
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+   
+}
+.containerImg{
+    background-color: grey;
     height: 200px;
     width: 200px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
     border-radius: 5px;
+    
 }

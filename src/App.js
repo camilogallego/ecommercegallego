@@ -1,13 +1,12 @@
 import React from 'react'
-import Cards from './components/Cards'
-import NavBar from './components/NavBar'
+import Route  from './components/Router'
+
 
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-     <Cards/>
+      <Route/>
     </div>
   )
 }
