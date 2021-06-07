@@ -1,39 +1,69 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography,Button, IconButton, } from '@material-ui/core'
+import { AppBar, Toolbar, Typography, Button, IconButton, } from '@material-ui/core'
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles'
 import theme from './temaConfig'
 import './NavBar.css'
 import ButtonMenu from '../ButtonMenu'
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import PropTypes from 'prop-types';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 
+function ElevationScroll(props) {
+    const { children, window } = props;
 
-const useStyle = makeStyles(theme =>({
-    offset:theme.mixins.toolbar,
-    menuButton:{
+    const trigger = useScrollTrigger({
+        disableHysteresis: true,
+        threshold: 0,
+        target: window ? window() : undefined,
+    });
+
+    return React.cloneElement(children, {
+        elevation: trigger ? 4 : 0,
+    });
+}
+
+ElevationScroll.propTypes = {
+    children: PropTypes.element.isRequired,
+    window: PropTypes.func,
+};
+const useStyle = makeStyles(theme => ({
+    
+    menuButton: {
         marginRight: theme.spacing(2)
+
     },
-    space:{
+    space: {
         flexGrow: 1
+    },
+    max:{
+        marginBottom: 100
     }
+
 }))
-function NavBar() {
+function NavBar(props) {
     const classes = useStyle()
     return (
         <div>
-            <ThemeProvider theme={theme}>
-            <AppBar position="static">
-                <Toolbar>
-                    <IconButton color="inherit" aria-label="menu">
-                       <ButtonMenu/>
-                    </IconButton>
-                    <Typography variant="h6"  className={classes.space}>
-                        Menu
-                    </Typography>
-                    <Button color="inherit">Login</Button>
-                </Toolbar>
-            </AppBar>
-            <div className={classes.offset}></div>
-            </ThemeProvider>
+            <CssBaseline />
+            <ElevationScroll {...props}>
+                <ThemeProvider theme={theme}>
+
+                    <AppBar >
+                        <Toolbar>
+                            <IconButton color="inherit" aria-label="menu" >
+                                <ButtonMenu />
+                            </IconButton>
+                            <Typography variant="h6" className={classes.space}>
+                                Menu
+                        </Typography>
+                            <Button color="inherit">Login</Button>
+                        </Toolbar>
+                    </AppBar>
+                    <div className={classes.max}></div>
+                </ThemeProvider>
+            </ElevationScroll>
+            
         </div>
     )
 }
