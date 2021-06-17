@@ -1,12 +1,11 @@
 import React from 'react'
 
-function Offers() {
-    
+function Contact() {
     return (
         <div>
-            <h1>ofertas</h1>
+            <h2>contacto</h2>
         </div>
     )
 }
 
-export default Offers
+export default Contact

@@ -28,7 +28,7 @@ ElevationScroll.propTypes = {
     window: PropTypes.func,
 };
 const useStyle = makeStyles(theme => ({
-    
+
     menuButton: {
         marginRight: theme.spacing(2)
 
@@ -36,7 +36,7 @@ const useStyle = makeStyles(theme => ({
     space: {
         flexGrow: 1
     },
-    max:{
+    max: {
         marginBottom: 100
     }
 
@@ -48,7 +48,6 @@ function NavBar(props) {
             <CssBaseline />
             <ElevationScroll {...props}>
                 <ThemeProvider theme={theme}>
-
                     <AppBar >
                         <Toolbar>
                             <IconButton color="inherit" aria-label="menu" >
@@ -56,14 +55,17 @@ function NavBar(props) {
                             </IconButton>
                             <Typography variant="h6" className={classes.space}>
                                 Menu
-                        </Typography>
+                            </Typography>
+                            <Typography variant="h6" className={classes.space}>
+                                
+                            </Typography>
                             <Button color="inherit">Login</Button>
                         </Toolbar>
                     </AppBar>
                     <div className={classes.max}></div>
                 </ThemeProvider>
             </ElevationScroll>
-            
+
         </div>
     )
 }

@@ -1,11 +1,10 @@
 import React from 'react'
 import Card from '../Card'
-import { cards } from './contanst'
 import './Cards.css'
 
 
 
-function Cards() {
+function Cards({cards = []}) {
     return (
         <div className="container">
             <div className="row">
@@ -14,8 +13,8 @@ function Cards() {
                         <Card
                             tittle={card.tittle}
                             imageUrl={card.image}
-                            description={card.description} 
-                            stock={card.stock}/>
+                            description={card.description}
+                            stock={card.stock} />
                     </div>
                 ))
                 }

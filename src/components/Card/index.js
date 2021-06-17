@@ -10,11 +10,12 @@ function Card({ tittle, imageUrl, description, stock }) {
             <img src={imageUrl} alt="imagenprod" className="containerImg" />
             <div className="card-body">
                 <h3 className="card-title aline-tex-center">{tittle}</h3>
-                 <p className="card-text text-secondary">{description}</p>
+                <p className="card-text text-secondary">{description}</p>
             </div>
 
-            <Counter 
-            stock={stock} />
+            <Counter
+                stock={stock}
+            />
 
         </div>
     )

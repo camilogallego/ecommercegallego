@@ -22,8 +22,8 @@ export const cards = [
         stock: 7,
         tittle: "Microprocesador AMD Ryzen 5",
         image: ryzen,
-        description:"AMD Ryzen™ 5 5600X Numero de núcleos de CPU 6 Numero de hilos 12 Reloj base 3.7GHz Reloj de aumento máx. hasta 4.6GHz Caché L2 total 3MB Caché L3 total 32MB Desbloqueados Sí CMOS TSMC 7nm FinFET Package AM4 Versión de PCI Express PCIe 4.0 Solución térmica (PIB) Wraith Stealth TDP predeterminado 65W, Temp. máx. 95C"
+        description: "AMD Ryzen™ 5 5600X Numero de núcleos de CPU 6 Numero de hilos 12 Reloj base 3.7GHz Reloj de aumento máx. hasta 4.6GHz Caché L2 total 3MB Caché L3 total 32MB Desbloqueados Sí CMOS TSMC 7nm FinFET Package AM4 Versión de PCI Express PCIe 4.0 Solución térmica (PIB) Wraith Stealth TDP predeterminado 65W, Temp. máx. 95C"
     },
-    
+
 
 ]
