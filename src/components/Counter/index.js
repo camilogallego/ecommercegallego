@@ -4,14 +4,14 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import './Counter.css'
 
 
-function Counter({stock}) {
+function Counter({ stock }) {
     const [cart, setCart] = useState(0)
     const [disabled, setDisabled] = useState()
-    
+
 
     const handleUP = () => {
         if (cart === stock ? setDisabled(false) : setDisabled)
-        setCart(cart + 1)
+            setCart(cart + 1)
     }
     const handleDown = () => {
         if (cart <= 0 ? setDisabled(false) : setDisabled)

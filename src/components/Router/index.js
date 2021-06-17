@@ -6,9 +6,9 @@ import {
     Route,
 
 } from 'react-router-dom';
-import Offers from '../pages/Offers'
-import Home from '../pages/Home'
-import Contact from '../pages/Contact'
+import Products from '../pages/Products/Products'
+import Home from '../pages/Home/Home'
+import Contact from '../pages/Contact/Contact'
 
 
 
@@ -21,8 +21,8 @@ function Router() {
                     <Route path="/" exact>
                         <Home/>
                     </Route>
-                    <Route path="/Offers">
-                        <Offers/>
+                    <Route path="/Products">
+                        <Products/>
                     </Route>
                     <Route path="/Contact">
                         <Contact/>
