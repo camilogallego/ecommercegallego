@@ -1,12 +1,9 @@
 import { cards } from '../components/Cards/contanst'
 
-function getCards() {
+export default function getCards() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(cards)
-        },
-            3000)
+        })
     })
 }
-
-export default getCards

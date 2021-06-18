@@ -27,7 +27,7 @@ function Counter({ stock }) {
                 >
                     <RemoveIcon />
                 </button>
-                <h3>{cart}</h3>
+                <h2>{cart}</h2>
                 <button
                     className="btnIcon"
                     onClick={handleUP}>
@@ -35,8 +35,7 @@ function Counter({ stock }) {
                 </button>
             </div>
             <div>
-                <button
-                    className="btnAdd">agregar</button>
+                <button className="btnAdd">agregar</button>
             </div>
 
         </div>
