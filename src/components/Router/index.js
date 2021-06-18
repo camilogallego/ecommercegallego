@@ -18,15 +18,10 @@ function Router() {
             <NavBar />
             <div>
                 <Switch>
-                    <Route path="/" exact>
-                        <Home/>
-                    </Route>
-                    <Route path="/Products">
-                        <Products/>
-                    </Route>
-                    <Route path="/Contact">
-                        <Contact/>
-                    </Route>
+                    <Route path="/" exact component={Home}/>
+                    <Route path="/Products" component={Products}/>
+                    <Route path="/Contact" component={Contact}/>
+                    
                 </Switch>
             </div>
         </BrowserRouter>

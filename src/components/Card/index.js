@@ -2,21 +2,19 @@ import React from 'react'
 import Counter from '../Counter'
 import './Card.css'
 
-function Card({ tittle, imageUrl, description, stock }) {
+function Card({ title, imageUrl, price, stock }) {
 
 
     return (
         <div className="card" >
-            <img src={imageUrl} alt="imagenprod" className="containerImg" />
+            <img src={imageUrl} alt="imagenprod" className="cardImg" />
             <div className="card-body">
-                <h3 className="card-title aline-tex-center">{tittle}</h3>
-                <p className="card-text text-secondary">{description}</p>
+                <h5 className="card-title aline-tex-center">{title}</h5>
             </div>
-
-            <Counter
-                stock={stock}
-            />
-
+            <div className="containerCounter">
+            <h4 className="card-text ">${price}</h4>
+            <Counter stock={stock} />
+            </div>
         </div>
     )
 }

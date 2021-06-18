@@ -1,15 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Api from '../../../Api'
+import Cards from '../../Cards'
 
-function Offers() {
-    fetch('https://fakestoreapi.com/products')
-        .then(res => res.json())
-        .then(prods => console.log(prods))
+function Products() {
+    const [state, setState] = useState()
+
+    const getApi = async () => {
+        const response = await Api('products')
+        setState(response)
+        console.log(response);
+    }
+
+    useEffect(() => {
+        getApi()
+    }, [])
     return (
         <div>
-            <h2>Productos</h2>
-            
+            <h2>Productos </h2>
+            <Cards
+                cards={state}
+            />
         </div>
     )
 }
 
-export default Offers
+export default Products
