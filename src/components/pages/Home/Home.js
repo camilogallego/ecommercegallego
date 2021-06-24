@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import getCards from '../../../mock'
+import {getCards} from '../../../mock'
 import Cards from '../../Cards'
 import './Home.css'
 
@@ -9,7 +9,7 @@ function Home() {
     const getApi = async()=>{
         const response = await getCards()
         setState(response)
-        console.log(response);
+        
     }
 
     useEffect(()=> {
