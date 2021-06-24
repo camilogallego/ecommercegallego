@@ -1,0 +1,39 @@
+.containerCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    align-self: flex-start;
+    margin-bottom: 25px;
+}
+.cardDetailImg {
+    width: 250px;
+    height: 300px;
+    margin: 20px;
+}
+.cardDetail {
+   display: flex;
+  
+  border: 1px solid rgba(0, 0, 0, 0.377);
+   width: 80%;
+}
+.desciptionDetail p {
+    margin: 25px;
+    text-align: justify;
+    color: rgb(3, 3, 3);
+    
+}
+.desciptionDetail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.containerCounter {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

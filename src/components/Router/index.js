@@ -9,6 +9,7 @@ import {
 import Products from '../pages/Products/Products'
 import Home from '../pages/Home/Home'
 import Contact from '../pages/Contact/Contact'
+import ProductsDetail from '../pages/ProductsDetail/ProductsDetail'
 
 
 
@@ -21,6 +22,7 @@ function Router() {
                     <Route path="/" exact component={Home}/>
                     <Route path="/Products" component={Products}/>
                     <Route path="/Contact" component={Contact}/>
+                    <Route path="/Detail/:id" component={ProductsDetail} />
                     
                 </Switch>
             </div>

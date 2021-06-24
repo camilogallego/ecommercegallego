@@ -8,7 +8,7 @@ function Products() {
     const getApi = async () => {
         const response = await Api('products')
         setState(response)
-        console.log(response);
+        
     }
 
     useEffect(() => {

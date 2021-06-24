@@ -14,6 +14,7 @@ function Cards({ cards = [] }) {
                             imageUrl={card.image}
                             price={card.price}
                             stock={card.stock}
+                            id={card.id}
                         />
                     </div>
                 ))}
