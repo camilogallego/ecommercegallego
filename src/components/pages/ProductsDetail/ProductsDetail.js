@@ -3,13 +3,21 @@ import './ProductsDetail.css'
 import Api from '../../../Api'
 import Counter from '../../Counter'
 import { getCardsId } from '../../../mock'
+import BtnAdd from '../../BtnAdd/BtnAdd'
 
 
-function ProductsDetail({ match }) {
+function ProductsDetail({ match } ) {
 
     let productId = match.params.id
 
     const [produt, setProdut] = useState([])
+    const [add, setAdd] = useState(false)
+    const [amount, setAmount] = useState()
+
+    const addProduct = (cart) => {
+        setAmount(cart)
+        setAdd(true)
+    }
 
     const getApi = async () => {
         let response = await Api(`products/${productId}`)
@@ -43,7 +51,8 @@ function ProductsDetail({ match }) {
                     </p>
                     <h5 className="card-text ">${produt.price}</h5>
                     <div className="containerCounter">
-                        <Counter stock={produt.stock} />
+                        {add === false ? (<Counter stock={produt.stock} addProduct={addProduct} />) : (<BtnAdd></BtnAdd>) }
+                        
                     </div>
                 </div>
 

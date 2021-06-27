@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {getCards} from '../../../mock'
-import Cards from '../../Cards'
+import Cards from '../../Cards/Cards'
 import './Home.css'
 
 function Home() {

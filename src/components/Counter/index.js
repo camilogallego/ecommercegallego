@@ -4,10 +4,10 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import './Counter.css'
 
 
-function Counter({ stock }) {
+function Counter({ stock, addProduct }) {
     const [cart, setCart] = useState(0)
     const [disabled, setDisabled] = useState()
-
+    
 
     const handleUP = () => {
         if (cart === stock ? setDisabled(false) : setDisabled)
@@ -17,6 +17,7 @@ function Counter({ stock }) {
         if (cart <= 0 ? setDisabled(false) : setDisabled)
             setCart(cart - 1)
     }
+
     return (
         <div >
             <div className="contentAdd">
@@ -35,7 +36,15 @@ function Counter({ stock }) {
                 </button>
             </div>
             <div>
-                <button className="btnAdd">agregar</button>
+                <button
+                    className="btnAdd"
+                    onClick={()=>{
+                        addProduct(cart)
+                    }}
+                    disabled={!cart}
+                >
+                    agregar
+                </button>
             </div>
 
         </div>
