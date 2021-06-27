@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from '../NavBar'
+
 import {
     BrowserRouter,
     Switch,
@@ -13,19 +13,16 @@ import ProductsDetail from '../pages/ProductsDetail/ProductsDetail'
 
 
 
-function Router() {
+function Router({children}) {
     return (
         <BrowserRouter>
-            <NavBar />
-            <div>
-                <Switch>
-                    <Route path="/" exact component={Home}/>
-                    <Route path="/Products" component={Products}/>
-                    <Route path="/Contact" component={Contact}/>
-                    <Route path="/Detail/:id" component={ProductsDetail} />
-                    
-                </Switch>
-            </div>
+        {children}
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/Products" component={Products} />
+                <Route path="/Contact" component={Contact} />
+                <Route path="/Detail/:id" component={ProductsDetail} />
+            </Switch>
         </BrowserRouter>
 
     )

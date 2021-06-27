@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography, Button, IconButton, } from '@material-ui/c
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles'
 import theme from './temaConfig'
 import './NavBar.css'
-import ButtonMenu from '../ButtonMenu'
+import ButtonMenu from '../ButtonMenu/ButtonMenu'
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import PropTypes from 'prop-types';
 import CssBaseline from '@material-ui/core/CssBaseline';

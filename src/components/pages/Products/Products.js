@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Api from '../../../Api'
-import Cards from '../../Cards'
+import Cards from '../../Cards/Cards'
 
 function Products() {
     const [state, setState] = useState()
@@ -10,7 +10,6 @@ function Products() {
         setState(response)
         
     }
-
     useEffect(() => {
         getApi()
     }, [])
