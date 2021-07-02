@@ -1,0 +1,39 @@
+.items{
+   width: 80%;
+   margin: 5%;
+}
+.itemsDetail{
+    display: flex;
+    justify-content: space-between;
+}
+
+.itemsProduct{
+    display: flex;
+    flex-direction: row;
+      
+}
+.itemsImg{
+    width: 100px ;
+    margin: 5px;
+    padding: 5px;
+    
+}
+.itemsTitle{
+    margin: 10px 0 10px 50px;
+    width: 50%;
+   ;
+}
+.itemstotal{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+
+}
+.counterItems{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.totalProduct{
+    text-align: end;
+}
