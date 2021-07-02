@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography, Button, IconButton, } from '@material-ui/core'
+import { AppBar, Toolbar, Typography, Button, } from '@material-ui/core'
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles'
 import theme from './temaConfig'
 import './NavBar.css'
@@ -50,9 +50,9 @@ function NavBar(props) {
                 <ThemeProvider theme={theme}>
                     <AppBar >
                         <Toolbar>
-                            <IconButton color="inherit" aria-label="menu" >
+                            
                                 <ButtonMenu />
-                            </IconButton>
+                            
                             <Typography variant="h6" className={classes.space}>
                                 Menu
                             </Typography>
