@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
 }
 .title {
     align-self: flex-start;
@@ -15,7 +16,7 @@
 }
 .cardDetail {
     display: flex;
-    box-shadow:  0 0 20px rgb(87, 27, 27) !important;
+    box-shadow:  0 0 20px rgb(19, 18, 18) !important;
     border: 1px solid rgba(0, 0, 0, 0.377);
     border-radius: 10px;
     width: 60%;
@@ -36,4 +37,18 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin-bottom: 10px;
+}
+@media (max-width: 1200px) {
+    .cardDetail {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .cardDetailImg {
+    width: 300px;
+   
+}
+    
 }

@@ -2,15 +2,16 @@ import React, { useContext } from 'react'
 import { ItemsContext } from '../../../ItemsContext/ItemsContext'
 import './CartProduct.css'
 import Counter from '../../Counter/Counter'
+import BtnBuy from '../../BtnBuy/BtnBuy'
+import { Link } from 'react-router-dom'
+import DeleteIcon from '@material-ui/icons/Delete';
+
 
 
 function CartProduct() {
     const [items, setItems] = useContext(ItemsContext)
 
-    let totalP = 0
-    items.map((item) => {
-        return totalP = totalP + (item.price * item.amount)
-    })
+    const sumaPrecios = items.reduce((prev, next) => prev + (next.price * next.amount), 0);
 
     const addProduct = (amount, id) => {
         let moreProduct = items.map((addMore) => {
@@ -25,6 +26,13 @@ function CartProduct() {
     const deleteAll = () => {
         setItems([])
     }
+    const deleteItems = (id) => {
+        let deleteItems = items.filter((item)=>{
+            return item.id !== id
+        }) 
+       
+        setItems(deleteItems)
+    }
 
     return (
         <div className="items">
@@ -37,10 +45,12 @@ function CartProduct() {
                 return (
                     <div key={product.id}>
                         <div className="itemsProduct">
-                            <img src={product.image}
-                                alt="itemsprodu"
-                                className="itemsImg"
-                            />
+                            <Link to={`/detail/${product.id}`}>
+                                <img src={product.image}
+                                    alt="itemsprodu"
+                                    className="itemsImg"
+                                />
+                            </Link>
                             <div className="itemsTitle">
                                 <h6> {product.title}</h6>
                                 <h5> ${product.price}</h5>
@@ -53,15 +63,25 @@ function CartProduct() {
                                         stock={product.stock}>
                                     </Counter>
                                 </div>
-                                <h5>${product.price * product.amount}</h5>
+                                <div>
+                                    <h5>${product.price * product.amount}</h5>
+                                    <button type="button"
+                                        className="btn btn-outline-danger btn-sm"
+                                        onClick={() => {deleteItems(product.id)} }>
+                                        <DeleteIcon />Eliminar
+                                    </button>
+                                </div>
                             </div>
                         </div>
+
+
                         <hr></hr>
                     </div>
                 )
             })}
-            <div className="totalProduct">
-            <h2>Total ${totalP}</h2>
+            <div className={sumaPrecios === 0 ? "btnBuy" : "totalProduct"}>
+                {sumaPrecios === 0 ? <BtnBuy></BtnBuy> : <h2>Total ${sumaPrecios}</h2>}
+
             </div>
 
         </div>

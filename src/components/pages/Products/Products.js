@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import Api from '../../../Api'
 import Cards from '../../Cards/Cards'
+import Spinner from '../../Spinner/Spinner'
 
 function Products() {
     const [state, setState] = useState()
+    const [loading, setloading] = useState(false)
 
     const getApi = async () => {
+        
         const response = await Api('products')
         setState(response)
+        setloading(true)
         
     }
     useEffect(() => {
@@ -15,10 +19,15 @@ function Products() {
     }, [])
     return (
         <div>
-            <h2>Productos </h2>
-            <Cards
-                cards={state}
-            />
+            {!loading ? <Spinner></Spinner> :
+                <div>
+                    <h2>Productos </h2>
+                    <Cards
+                        cards={state}
+                    />
+                </div>
+            }
+            
         </div>
     )
 }

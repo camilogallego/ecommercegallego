@@ -1,0 +1,13 @@
+.BtnEnd {
+
+    background-color: transparent;
+    width: 120px;
+    font-size: 15px;
+    border: 2px solid teal;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.BtnEnd:hover {
+    background-color: black;
+    color: white;
+}
