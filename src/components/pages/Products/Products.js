@@ -5,13 +5,12 @@ import Spinner from '../../Spinner/Spinner'
 
 function Products() {
     const [state, setState] = useState()
-    const [loading, setloading] = useState(false)
+    const [loading, setloading] = useState(true)
 
     const getApi = async () => {
-        
         const response = await Api('products')
         setState(response)
-        setloading(true)
+        setloading(false)
         
     }
     useEffect(() => {
@@ -19,7 +18,7 @@ function Products() {
     }, [])
     return (
         <div>
-            {!loading ? <Spinner></Spinner> :
+            {loading ? <Spinner></Spinner> :
                 <div>
                     <h2>Productos </h2>
                     <Cards
