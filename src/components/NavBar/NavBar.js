@@ -40,7 +40,7 @@ const useStyle = makeStyles(theme => ({
         flexGrow: 1
     },
     max: {
-        marginBottom: 100
+        marginBottom: 70
     },
     color:{
         color: "white"
@@ -68,7 +68,6 @@ function NavBar(props) {
     }
     const filter = (search)=>{
         let ResultSearch = items.filter((element)=>{
-            console.log('hola', element.title);
             if(element.title.toStrin().toLowerCase().includes(search.toLowerCase())){
                 return element
             }
