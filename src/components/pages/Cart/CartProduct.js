@@ -27,10 +27,10 @@ function CartProduct() {
         setItems([])
     }
     const deleteItems = (id) => {
-        let deleteItems = items.filter((item)=>{
+        let deleteItems = items.filter((item) => {
             return item.id !== id
-        }) 
-       
+        })
+
         setItems(deleteItems)
     }
 
@@ -46,7 +46,8 @@ function CartProduct() {
                     <div key={product.id}>
                         <div className="itemsProduct">
                             <Link to={`/detail/${product.id}`}>
-                                <img src={product.image}
+                                <img
+                                    src={product.image}
                                     alt="itemsprodu"
                                     className="itemsImg"
                                 />
@@ -67,21 +68,23 @@ function CartProduct() {
                                     <h5>${product.price * product.amount}</h5>
                                     <button type="button"
                                         className="btn btn-outline-danger btn-sm"
-                                        onClick={() => {deleteItems(product.id)} }>
+                                        onClick={() => { deleteItems(product.id) }}>
                                         <DeleteIcon />Eliminar
                                     </button>
                                 </div>
                             </div>
                         </div>
-
-
                         <hr></hr>
                     </div>
                 )
             })}
             <div className={sumaPrecios === 0 ? "btnBuy" : "totalProduct"}>
                 {sumaPrecios === 0 ? <BtnBuy></BtnBuy> : <h2>Total ${sumaPrecios}</h2>}
-
+            </div>
+            <div>
+                <Link to='/FormShip'>
+                    <button className='btn btn-primary'>finalizar compra</button>
+                </Link>
             </div>
 
         </div>

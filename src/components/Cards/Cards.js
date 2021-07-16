@@ -8,7 +8,7 @@ function Cards({ cards = [] }) {
         <div className="container">
             <div className="row">
                 {cards.map(card => (
-                    <div className="col-md-4 cards" key={card.id}>
+                    <div className="col-md-3 cards" key={card.id}>
                         <Card
                             title={card.title}
                             imageUrl={card.image}
