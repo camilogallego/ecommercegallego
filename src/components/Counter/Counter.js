@@ -17,7 +17,6 @@ function Counter({ stock, addProduct, defaultValue }) {
         if (cart === 1 ? setDisabled(false) : setDisabled)
             if (cart <= 0 ? setDisabled(false) : setDisabled)
                 setCart(cart - 1)
-
     }
 
     useEffect(() => {

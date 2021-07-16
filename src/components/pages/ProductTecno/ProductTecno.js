@@ -1,30 +1,32 @@
 import React, { useEffect, useState } from 'react'
-import Spinner from '../../Spinner/Spinner'
 import Cards from '../../Cards/Cards'
-import './Home.css'
+import Spinner from '../../Spinner/Spinner'
 import { db } from '../../../Api/Firebase';
 
-
-function Home() {
+function TecnoProducts() {
     const [state, setState] = useState()
     const [loading, setloading] = useState(true)
 
-    const getProducts = () => {
-        db.collection('highlights').onSnapshot((querySnapshot) => {
-            const docs = [];
-            querySnapshot.forEach((doc) => {
-                docs.push({ ...doc.data(), id: doc.id });
-            });
-            setState(docs);
-        });
+    const getProductsTE = () => {
+        const docs = [];
+        db.collection('highlights').where("category", "==", 'tecnologia')
+            .get()
+            .then(function (querySnapshot) {
+                querySnapshot.forEach(function (doc) {
+                    docs.push({ ...doc.data(), id: doc.id });
+                });
+                setState(docs);
+            })
         setTimeout(() => {
             setloading(false)
-        }, 2000);
-
+        }, 1000);
     };
+
+
     useEffect(() => {
-        getProducts();
+        getProductsTE();
     }, []);
+
     return (
         <div>
             {loading && <Spinner></Spinner>}
@@ -36,5 +38,4 @@ function Home() {
     )
 }
 
-export default Home
-
+export default TecnoProducts
